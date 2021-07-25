@@ -11,8 +11,8 @@ export default function NavBar({currentMode}) {
 
 
     return (
-        <div className={currentMode === 'close' ? "bg-gray-300 dark:bg-gray-700 w-64 py-10 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out z-50" : 
-        "bg-gray-300 dark:bg-gray-700 w-64 py-10 px-2 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out z-50"
+        <div className={currentMode === 'close' ? "bg-gray-300 dark:bg-gray-700 w-64 h-full py-10 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out z-50" : 
+        "bg-gray-300 dark:bg-gray-700 w-64 h-full py-10 px-2 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out z-50"
         }>
             {/* "w-64 py-10 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out" */}
             <Link href='/' passHref>

@@ -49,28 +49,29 @@ export default function RecipeDetails({ snippet }) {
   if (!snippet) return (<div>Loading...</div>)
 
   const { featuredImage, title, tags, wordCount, detailedInformation, description } = snippet.fields
-
+    console.log(snippet)
   return (
     <div className="flex flex-col items-center space-y-8">
-      <div className="px-2 text-center">
-        <Image 
-          src={'https:' + featuredImage.fields.file.url}
-          width={800}
-          height={400}
-          className="rounded-md"
-        />
-        <h2 className="text-3xl font-semibold my-8">{ title }</h2>
-      </div>
-
-      <div className="text-center">
+        <div className="px-2 text-center">
+            <Image 
+            src={'https:' + featuredImage.fields.file.url}
+            width={800}
+            height={400}
+            className="rounded-md"
+            />
+            <h2 className="text-3xl font-semibold my-8">{ title }</h2>
+        </div>
+        <div className="px-2">
+            <div className="prose dark:prose-dark">{documentToReactComponents(detailedInformation)}</div>
+        </div>
+        <div className="w-1/2 border-b-4 dark:border-gray-600 border-gray-200"></div>
+        <div className="flex items-center">
+        <p className="text-left bg-red-500">{snippet.sys.createdAt}</p>
         {tags.map((tag, index) => (
-          <span className="px-2 py-1 mx-2 bg-gray-200 dark:bg-gray-700" key={index}>{ tag }</span>
+            <span className="px-2 py-1 mx-2 bg-gray-200 dark:bg-gray-700" key={index}>{ tag }</span>
         ))}
-      </div>
-        
-      <div className="px-2">
-        <div className="prose dark:prose-dark">{documentToReactComponents(detailedInformation)}</div>
-      </div>
+        </div>
+        <div className="w-1/2 border-b-4 dark:border-gray-600 border-gray-200 mb-10"></div>
 
     </div>
   )

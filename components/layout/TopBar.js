@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function TopBar({toggleMode}){
     return (
-        <div className="bg-gray-300 dark:bg-gray-700 flex justify-between items-center md:hidden">
+        <div className="bg-gray-300 dark:bg-gray-700 w-screen flex justify-between items-center md:hidden">
             <div>
                 <Link href='/' passHref>
                     <a className="cursor-pointer flex items-center text-2xl font-bold p-5 ">
