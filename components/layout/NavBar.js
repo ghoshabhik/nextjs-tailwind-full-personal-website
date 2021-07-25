@@ -32,13 +32,18 @@ export default function NavBar({currentMode}) {
                 {user ? <div className="bg-gray-100 dark:bg-gray-800 px-3 py-4 block text-xl font-bold"> Welcome {user.name}</div> : <></>}
                 </li>
                 <li>
-                    <Link href='/blogs' passHref>
-                        <a className="cursor-pointer bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-900 rounded px-3 py-4 block">Blog</a>
+                    <Link href='/' passHref>
+                        <a className="cursor-pointer bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-900 rounded px-3 py-4 block">Home</a>
                     </Link>
                 </li>
                 <li>
-                    <Link href='/blogs' passHref>
+                    <Link href='/project' passHref>
                         <a className="cursor-pointer bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-900 rounded px-3 py-4 block">Projects</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href='/snippet' passHref>
+                        <a className="cursor-pointer bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-900 rounded px-3 py-4 block">Snippets</a>
                     </Link>
                 </li>
                 <li>

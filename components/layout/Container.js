@@ -32,7 +32,7 @@ export default function Container(props) {
             <div className="relative min-h-screen md:flex">
                 <TopBar toggleMode={toggleMode}/>
                 <NavBar currentMode={currentMode}/>
-                <div className="flex-1 bg-gray-200 dark:bg-gray-800 pt-20">
+                <div className="flex-1 bg-gray-50 dark:bg-gray-800 pt-20">
                     {children}
                 </div>
             </div>
