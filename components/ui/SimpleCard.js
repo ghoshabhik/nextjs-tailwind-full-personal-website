@@ -6,7 +6,7 @@ export default function SimpleCard({ snippet }) {
     const { slug, featuredImage, title, tags, wordCount, detailedInformation, description } = snippet.fields
 
     return (
-      <div className="inline-block mb-4 mr-2 px-8 py-3 bg-gray-300 dark:bg-gray-600 rounded shadow">
+      <div className="lg:inline-block flex mb-4 mr-2 px-8 py-3 bg-gray-300 dark:bg-gray-600 rounded shadow">
             <Link href={'/snippet/' + slug} passHref>
                 <a>
                     <p className="text-xl mb-2">{title}</p>

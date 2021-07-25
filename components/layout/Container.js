@@ -3,6 +3,7 @@ import {useState} from 'react'
 
 import NavBar from '../../components/layout/NavBar'
 import TopBar from '../../components/layout/TopBar'
+import Footer from '../../components/layout/Footer'
 
 export default function Container(props) {
 
@@ -29,16 +30,22 @@ export default function Container(props) {
                 <NavBar />
                 {children}
             </div> */}
-            <div className="relative min-h-screen md:flex">
+            <div className="relative md:flex">
                 <div className="fixed z-50 h-full">
                     <TopBar toggleMode={toggleMode}/>
                     <NavBar currentMode={currentMode}/>
                 </div>
                 <div className="w-64"></div>
-                <div className="flex-1 bg-gray-50 dark:bg-gray-800 pt-20">
-                    {children}
+                <div className="flex-1 w-full bg-gray-50 dark:bg-gray-800 pt-20">
+                    {children}  
                 </div>
             </div>
+            <div className="flex flex-row">
+                <div className="lg:w-64"></div>
+                <div className="flex-1"><Footer /></div>
+                
+            </div>
+            
         </>
     )
 }
