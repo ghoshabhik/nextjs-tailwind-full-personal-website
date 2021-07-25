@@ -1,12 +1,11 @@
 import {useTheme} from 'next-themes'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useUser } from '../../firebase/useUser'
 
 export default function NavBar({currentMode}) {
     const {theme, setTheme} = useTheme()
     const [currentTheme, setCurrentTheme] = useState('light')
-    const [navBar, setNavBar] = useState(false)
     const { user, logout } = useUser()
 
 
@@ -14,7 +13,6 @@ export default function NavBar({currentMode}) {
         <div className={currentMode === 'close' ? "bg-gray-300 dark:bg-gray-700 w-64 h-full py-10 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out z-50" : 
         "bg-gray-300 dark:bg-gray-700 w-64 h-full py-10 px-2 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out z-50"
         }>
-            {/* "w-64 py-10 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out" */}
             <Link href='/' passHref>
                 <a className="cursor-pointer flex items-center text-2xl font-bold mb-20 p-5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-900 rounded">
                 <svg fill="currentColor"  height="30px" version="1.1" 
@@ -75,16 +73,24 @@ export default function NavBar({currentMode}) {
             </ul>
                       
             </nav>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded px-3 my-10 flex items-center space-x-3"><button onClick={() => { 
+            <div className="bg-gray-100 dark:bg-gray-800 rounded px-3 my-10 flex items-center space-x-3">
+                <button onClick={() => { 
                 setTheme(theme === 'dark' ? 'light' : 'dark')
                 setCurrentTheme(theme === 'dark' ? 'light' : 'dark')
                 }}
                 className="my-5"
-                >{currentTheme === 'dark' ? <div className="flex space-x-4"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                >{currentTheme === 'dark' ? <div className="flex space-x-4">
+                    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg><span className="ml-4"> Switch to light mode</span></div> : <div className="flex space-x-5"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                </svg>
+                <span className="ml-4"> Switch to light mode</span>
+                </div> : 
+                <div className="flex space-x-5">
+                    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg><span className="ml-4">Switch to dark mode</span></div> } 
+                </svg>
+                <span className="ml-4">Switch to dark mode</span>
+                </div> } 
                 </button>
             </div>
         </div>
