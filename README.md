@@ -1,34 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+My personal website was created on Hugo. Though it is an amazing tech and the speed which you can build is awesome, but it sometime feels very limiting. Given that I do not have much knowledge on the underlying language Go. I picked Hugo, purely based on the fact that I wanted to get started as quick as possible. I wanted to reach out to the world and get myself visible. I think I have done a fair enough job to start with. I did try few latest tech at the moment but the learning curve made me stick to the one I finally chose to use. 
 
-## Getting Started
+I am currently working on converting my website from Hugo to NextJs. The NextJs has been an exceptional tool in the current web development world. It offers a lot of functionality which you'd want during your web development. It brings lot of additional functionality the dev community was expecting from React for ever. Thanks to NextJs, it is so much joy of web development. Cheers to the maker, Vercel, amazing company. I love their products. 
 
-First, run the development server:
+Back to what I;m doing right now. Here is the high level requirement I am working on and the Tech-stack: 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+NextJs, Firebase for Authentication, Storage, Database, Nelify Functions for few secure api calls, Spotify api, twitter api, instagram api, github api, Notion api, airtable api
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Wwill keep updating this page. 
