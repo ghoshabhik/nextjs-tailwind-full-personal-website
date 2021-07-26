@@ -12,13 +12,16 @@ export default function ViewCount({ slug }) {
         trigger(`/api/increment-views?id=${slug}`)
         // const data = await res.json()
         // setCount(data.total)
-        const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher, {refreshInterval : 1000})
-        setCount(data)
+        
     }
 
     viewRegister()
+    
         
    },[slug])
+
+   const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher, {refreshInterval : 1000})
+   setCount(data)
 
   return (
     <div className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase">
