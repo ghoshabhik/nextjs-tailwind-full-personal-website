@@ -1,5 +1,6 @@
 import { createClient } from 'contentful'
 import { useState } from 'react'
+import useSWR from 'swr'
 
 import SimpleCard from '../components/ui/SimpleCard'
 import SearchBox from '../components/ui/SearchBox'

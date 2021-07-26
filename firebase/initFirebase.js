@@ -5,6 +5,7 @@ import 'firebase/firestore'
 import 'firebase/storage'
 import 'firebase/analytics'
 import 'firebase/performance'
+import 'firebase/database'
 
 const clientCredentials = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
