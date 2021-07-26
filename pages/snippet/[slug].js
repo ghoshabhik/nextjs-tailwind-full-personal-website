@@ -2,6 +2,8 @@ import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Image from 'next/image'
 
+import BreadCrumb from '../../components/ui/BreadCrumb'
+
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_KEY,
@@ -50,10 +52,11 @@ export default function RecipeDetails({ snippet }) {
   if (!snippet) return (<div>Loading...</div>)
   var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
-  const { featuredImage, title, tags, wordCount, detailedInformation, description } = snippet.fields
+  const { featuredImage, title, tags, wordCount, detailedInformation, description, slug  } = snippet.fields
     console.log(snippet)
   return (
     <div className="flex flex-col items-center space-y-8">
+        <BreadCrumb links={[{name: 'HOME', linkUrl: ''}, {name: 'ALL SNIPPETS', linkUrl: 'snippet'}, {name: `${slug}`, linkUrl: `snippet/${slug}`}]}/>
         <div className="px-2 text-center">
             <Image 
             src={'https:' + featuredImage.fields.file.url}
