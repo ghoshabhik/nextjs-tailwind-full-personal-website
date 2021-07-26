@@ -31,7 +31,7 @@ export default function Container(props) {
                 {children}
             </div> */}
             <div className="relative md:flex">
-                <div className="fixed z-50 h-full">
+                <div className="fixed h-auto ">
                     <TopBar toggleMode={toggleMode}/>
                     <NavBar currentMode={currentMode}/>
                 </div>

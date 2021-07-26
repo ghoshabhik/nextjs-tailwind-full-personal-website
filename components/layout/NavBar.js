@@ -11,7 +11,7 @@ export default function NavBar({currentMode}) {
 
     return (
         <div className={currentMode === 'close' ? "backdrop-filter backdrop-blur-lg bg-gray-300 dark:bg-gray-700 w-64 h-full py-10 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out z-50" : 
-        "backdrop-filter backdrop-blur-lg bg-gray-300 dark:bg-gray-700 w-64 h-full py-10 px-2 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out z-50"
+        "backdrop-filter backdrop-blur-lg bg-gray-300 dark:bg-gray-700 w-64 h-screen py-10 px-2 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out z-50"
         }>
             <Link href='/' passHref>
                 <a className="cursor-pointer flex items-center text-2xl font-bold mb-20 p-5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-900 rounded">
