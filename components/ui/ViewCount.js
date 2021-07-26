@@ -1,4 +1,4 @@
-import { trigger } from 'swr';
+import useSWR, {trigger} from 'swr';
 import { useState, useEffect } from 'react'
 
 export default function ViewCount({ slug }) {
@@ -9,8 +9,11 @@ export default function ViewCount({ slug }) {
 
     const viewRegister = async () => {
         const res = await fetch(`/api/increment-views?id=${slug}`)
-        const data = await res.json()
-        setCount(data.total)
+        trigger(`/api/increment-views?id=${slug}`)
+        // const data = await res.json()
+        // setCount(data.total)
+        const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher, {refreshInterval : 1000})
+        setCount(data)
     }
 
     viewRegister()
