@@ -82,7 +82,7 @@ export default function Slug({ snippet }) {
               <span className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase" key={index}>#{ tag }</span>
         ))}
         {/* <p className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase">{views ? views+' views' : '---'}</p> */}
-        <ViewCount slug={slug}/>
+        <div className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase"><ViewCount slug={slug}/></div>
         </div>
         <div className="w-1/2 border-b-1 dark:border-gray-600 border-gray-200 mb-10"></div>
 

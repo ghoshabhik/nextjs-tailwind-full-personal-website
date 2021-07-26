@@ -19,10 +19,10 @@ export default function ViewCount({ slug }) {
     }
     viewRegister()
         
-   })
+   },[slug])
 
 
    
 
-  return `${views > 0 ? views.toLocaleString() : '–––'}`;
+  return `${views > 0 ? views.toLocaleString()+" views" : '–––'}`;
 }
