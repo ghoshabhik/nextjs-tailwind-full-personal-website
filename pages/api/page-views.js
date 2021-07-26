@@ -1,6 +1,6 @@
 import db from '../../lib/db-admin'
 
-export default (req, res) => {
+export default pageview = (req, res) => {
     if (!req.query.id) {
         return db.ref('views').once('value', (snapshot) => {
             const views = snapshot.val()

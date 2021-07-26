@@ -1,10 +1,8 @@
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from 'next/image';
-import useSWR, { trigger } from 'swr';
-import { useState, useEffect } from 'react';
 
-import fetcher from '../../lib/fetcher'
+import ViewCount from '../../components/ui/ViewCount';
 import BreadCrumb from '../../components/ui/BreadCrumb'
 
 const client = createClient({
@@ -50,24 +48,16 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
-const Slug = ({ snippet }) => {
-
-  useEffect(() => {
-    const {viewSlug} = snippet.fields
-    const registerView = () => fetch(`/api/increment-views?id=${slug}`);
-
-    registerView();
-    trigger(`/api/increment-views?id=${slug}`)
-  }, [snippet]);
+export default function Slug({ snippet }) {
 
   if (!snippet) return (<div>Loading...</div>)
   var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
-  const { featuredImage, title, tags, wordCount, detailedInformation, description, slug  } = snippet.fields
 
-  // const { count } = useSWR(`/api/increment-views?id=${slug}`, fetcher)
-  const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher, { refreshInterval: 1000 })
-  const views = data?.total
+  const { featuredImage, title, tags, wordCount, detailedInformation, description, slug  } = snippet.fields
+  // const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher, {refreshInterval : 1000})
+  // const views = data?.total
+ 
   
   return (
     <div className="flex flex-col items-center space-y-8">
@@ -78,6 +68,7 @@ const Slug = ({ snippet }) => {
             width={800}
             height={400}
             className="rounded-md"
+            alt=""
             />
             <h2 className="text-3xl font-semibold my-8">{ title }</h2>
         </div>
@@ -90,8 +81,8 @@ const Slug = ({ snippet }) => {
         {tags.map((tag, index) => (
               <span className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase" key={index}>#{ tag }</span>
         ))}
-        <p className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase">{views ? views+' views' : '---'}</p>
-        
+        {/* <p className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase">{views ? views+' views' : '---'}</p> */}
+        <ViewCount slug={slug}/>
         </div>
         <div className="w-1/2 border-b-1 dark:border-gray-600 border-gray-200 mb-10"></div>
 
@@ -99,4 +90,3 @@ const Slug = ({ snippet }) => {
   )
 }
 
-export default Slug
