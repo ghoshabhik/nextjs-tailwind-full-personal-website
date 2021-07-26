@@ -26,7 +26,7 @@ export default function Container(props) {
             </Head>
 
             <TopNav toggleMode={toggleMode} currentMode={currentMode}/>
-            <div className="flex-1 w-full bg-gray-50 dark:bg-gray-800 pt-20">
+            <div className="lg:w-3/5 mx-auto bg-gray-50 dark:bg-gray-800 py-20 rounded shadow my-10">
                     {children}  
             </div>
             <Footer />

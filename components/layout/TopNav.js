@@ -10,7 +10,7 @@ export default function TopNav({toggleMode, currentMode}){
     const { user, logout } = useUser()
 
     return (
-        <div className="bg-gray-300 dark:bg-gray-700">
+        <div className="bg-gray-300 dark:bg-gray-800">
             <div className="lg:w-3/5 mx-auto flex justify-between items-center">
                 <div className="">
                     <Link href='/' passHref>
@@ -41,14 +41,14 @@ export default function TopNav({toggleMode, currentMode}){
                         </svg>
                         </div> } 
                     </button>
-                    <button className="p-3 focus:outline-none focus:bg-gray-700" onClick={()=> toggleMode()}>
+                    <button className="p-3 focus:outline-none" onClick={()=> toggleMode()}>
                         <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
             </div>
-            <div className={`lg:w-3/5 mx-auto bg-gray-400 dark:bg-gray-600 rounded-md px-10 ${currentMode === 'close' ? 'hidden' : 'flex flex-col'}`}>
+            <div className={`lg:w-3/5 mx-auto bg-gray-400 dark:bg-gray-600 rounded-md px-10 py-4 ${currentMode === 'close' ? 'hidden' : 'flex flex-col'}`}>
                 <div className="mr-2 block lg:hidden text-center mt-3">{user ? <div className="font-semibold text-purple-700 bg-purple-200 dark:text-purple-200 dark:bg-purple-700 px-2 py-1 rounded"> Hello, {user.name}</div> : <></>}</div>
                 <nav className="flex flex-col justify-between"> 
                     <ul className="space-y-3 text-center lg:text-left">
@@ -83,8 +83,8 @@ export default function TopNav({toggleMode, currentMode}){
                             </Link>
                         </li>
                         {user ? <li onClick={()=> toggleMode()}>
-                            <div className="flex-1 text-red-500" onClick={() => logout()}>
-                                <a className="cursor-pointer">Logout</a>
+                            <div className="inline text-red-700 bg-red-200 dark:text-red-200 dark:bg-red-700 px-3 py-2 rounded" onClick={() => logout()}>
+                                <a className="inline cursor-pointer">Logout</a>
                             </div>
                         </li> :
                         <li onClick={()=> toggleMode()}>
