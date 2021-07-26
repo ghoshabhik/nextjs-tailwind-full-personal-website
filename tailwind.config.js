@@ -5,6 +5,20 @@ module.exports = {
   // purge: [],
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    maxWidth: {
+      '1/4': '25%',
+      '1/2': '50%',
+      '3/4': '75%',
+      '6/10': '60%',
+      '8/10': '80%'
+     },
+     maxHeight: {
+      '1/4': '25%',
+      '1/2': '50%',
+      '3/4': '75%',
+      '6/10': '60%',
+      '8/10': '80%'
+     },
     extend: {
       fontFamily: {
         'body': ["Inter", "sans-serif"]

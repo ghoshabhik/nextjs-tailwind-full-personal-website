@@ -1,4 +1,3 @@
-
 import firebase from 'firebase/app'
 // the below imports are option - comment out what you don't need
 import 'firebase/auth'

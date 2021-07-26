@@ -53,7 +53,7 @@ export default function Snippet({ snippets }) {
   }
   
     return (
-      <div className="lg:w-3/4 mx-auto mb-10">
+      <div className="lg:w-3/6 mx-auto mb-10">
         <div className="mb-5">
           <BreadCrumb links={[{name: 'HOME', linkUrl: ''}]}/>
           <p className="text-4xl font-bold mb-3">Snippets</p>

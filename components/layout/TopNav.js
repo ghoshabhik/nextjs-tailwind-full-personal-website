@@ -68,7 +68,7 @@ export default function TopNav({toggleMode, currentMode}){
                             </Link>
                         </li>
                         <li onClick={()=> toggleMode()}>
-                            <Link href='/blogs' passHref>
+                            <Link href='/photography' passHref>
                                 <a className="cursor-pointer">Photography</a>
                             </Link>
                         </li>
