@@ -4,10 +4,10 @@ import fetcher from '../../lib/fetcher'
 
 export default function ViewCount({ slug }) {
 
-    const [count, setCount] = useState(0)
     const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher)
-    // setCount(data?.total)
-    console.log('view data ------ ',data)
+    const views = new Number(data?.total);
+
+    console.log('view data ------ ',data?.total)
 
    useEffect(() => {
 
@@ -19,14 +19,10 @@ export default function ViewCount({ slug }) {
     }
     viewRegister()
         
-   },[slug])
+   })
 
 
    
 
-  return (
-    <div className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase">
-        {count === 0 ? '---' : `${data?.total} views`}
-    </div>
-  )
+  return `${views > 0 ? views.toLocaleString() : '–––'}`;
 }
