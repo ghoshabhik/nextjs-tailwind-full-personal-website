@@ -6,7 +6,7 @@ export default function ViewCount({ slug }) {
 
     const [count, setCount] = useState(0)
     const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher)
-
+    console.log('view data ------ ',data)
 
    useEffect(() => {
 
