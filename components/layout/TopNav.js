@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {useTheme} from 'next-themes'
 import { useUser } from '../../firebase/useUser'
 
@@ -7,7 +7,15 @@ export default function TopNav({toggleMode, currentMode}){
 
     const {theme, setTheme} = useTheme()
     const [currentTheme, setCurrentTheme] = useState('light')
+    // const [loggedInUserClaims, setLoggedInUserClaims] = useState(null);
     const { user, logout } = useUser()
+
+    // useEffect(() => {
+    //     // console.log('Nav Admin Claims ---- ',user?.adminClaims)
+    //     if(user){
+    //       setLoggedInUserClaims(user?.adminClaims)
+    //     }
+    //   }, [user])
 
     return (
         <div className="bg-gray-300 dark:bg-gray-800">

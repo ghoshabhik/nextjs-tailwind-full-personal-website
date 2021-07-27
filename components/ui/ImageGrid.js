@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ImageGrid = ({ setSelectedImg }) => {
   const { docs } = useFirestore('images');
-  console.log(docs)
+  // console.log(docs)
 
   return (
     <div className="img-grid mx-5 my-20 grid grid-cols-1 lg:grid-cols-3 gap-6">

@@ -11,7 +11,7 @@ export default function SimpleCard({ snippet }) {
                 <a>
                     <p className="text-xl mb-2">{title}</p>
                     <p className="text-gray-600 dark:text-gray-400">{description}</p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">{snippet.count ? snippet.count : '---'} Views</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">{snippet.count ? snippet.count : '---'} Views</p>
                     <div className="my-2">
                         {tags.map((tag, index) => (
                             <span className="px-2 py-1 mx-2 bg-gray-200 dark:bg-gray-700 uppercase" key={index}>#{ tag }</span>

@@ -5,14 +5,22 @@ import BreadCrumb from '../components/ui/BreadCrumb';
 
 import { useUser } from '../firebase/useUser'
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 export default function Photography() {
 
   const [selectedImg, setSelectedImg] = useState(null);
+  const [loggedInUserClaims, setLoggedInUserClaims] = useState(null);
   const { user } = useUser()
 
-  // console.log(user)
+  useEffect(() => {
+    // console.log('Admin Claims ---- ',user?.adminClaims)
+    if(user){
+      setLoggedInUserClaims(user?.adminClaims)
+    }
+  }, [user])
+
+  
   return (
     <div >
       <main className="">
@@ -21,7 +29,7 @@ export default function Photography() {
           <p className="text-4xl font-bold mb-3">My Photography Page</p>
           <p className="text-xl text-gray-600 dark:text-gray-400">This is probably my favourite hobbies. Here are some of my photographs</p>
         </div>
-        {user && user.email === 'avik5324@gmail.com' && <UploadForm />}
+        {user && loggedInUserClaims == 'Site Admin' && <UploadForm />}
         <ImageGrid setSelectedImg={setSelectedImg} />
         { selectedImg && (
         <ImageModal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
