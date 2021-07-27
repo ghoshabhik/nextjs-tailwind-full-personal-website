@@ -4,10 +4,10 @@ import fetcher from '../../lib/fetcher'
 
 export default function ViewCount({ slug }) {
 
-    const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher)
+    const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher, {refreshInterval: 1000})
     const views = new Number(data?.total);
 
-    console.log('view data ------ ',data?.total)
+    // console.log('view data ------ ',data?.total)
 
    useEffect(() => {
 
@@ -15,7 +15,7 @@ export default function ViewCount({ slug }) {
         const res = await fetch(`/api/increment-views?id=${slug}`)
         // const data = await res.json()
         // setCount(data.total)
-        trigger(`/api/increment-views?id=${slug}`)
+        // trigger(`/api/increment-views?id=${slug}`)
     }
     viewRegister()
         

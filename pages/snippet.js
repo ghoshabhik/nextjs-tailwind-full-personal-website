@@ -7,6 +7,8 @@ import SearchBox from '../components/ui/SearchBox'
 import BreadCrumb from '../components/ui/BreadCrumb'
 import TagCloud from '../components/ui/TagCloud'
 
+import fetcher from '../lib/fetcher'
+
 export async function getStaticProps() {
 
     const client = createClient({
@@ -29,6 +31,20 @@ export default function Snippet({ snippets }) {
   const [searchTerm, setSearchTerm] = useState("")
   const [tag, setTag] = useState("Recent")
   const [filteredSnippets, setFilteredSnippets] = useState(snippets)
+  const { data } = useSWR(`/api/page-views`, fetcher, {refreshInterval: 2000})
+
+  if(data){
+    data.pageViews.map( page => {
+      snippets.map((snippet,index) => {
+        if(snippet.fields.slug === page.slug){
+          snippets[index].count = page.count
+        }
+      })
+    })
+  }
+  
+
+  // console.log('Snippets ----',snippets)
 
   const handleType = e => {
     if(e.target.value.length > 2){

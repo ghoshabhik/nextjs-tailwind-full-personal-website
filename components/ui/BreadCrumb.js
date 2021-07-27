@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const BreadCrumb = ({links}) => {
-    console.log(links.length)
+    // console.log(links.length)
     return (
         <div className="">
             {links.map((link, index) => (
