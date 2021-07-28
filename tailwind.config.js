@@ -21,7 +21,8 @@ module.exports = {
      },
     extend: {
       fontFamily: {
-        'body': ["Inter", "sans-serif"]
+        'body': ["Inter", "sans-serif"],
+        'header': ["WindSong", "sans-serif"]
        },
       typography: (theme) => ({
         DEFAULT: {

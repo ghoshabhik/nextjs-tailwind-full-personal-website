@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import {useState} from 'react'
 
-import TopNav from '../../components/layout/TopNav'
+// import TopNav from '../../components/layout/TopNav'
+import TopNavigation from '../../components/layout/TopNavigation'
 import Footer from '../../components/layout/Footer'
 
 export default function Container(props) {
@@ -24,8 +25,8 @@ export default function Container(props) {
                 <meta name="description" content="Personal website to showcase my work, projects and writing" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
-            <TopNav toggleMode={toggleMode} currentMode={currentMode}/>
+            <TopNavigation toggleMode={toggleMode} currentMode={currentMode}/>
+            
             <div className="mx-auto bg-gray-50 dark:bg-gray-800 py-20 rounded shadow my-10">
                     {children}  
             </div>
