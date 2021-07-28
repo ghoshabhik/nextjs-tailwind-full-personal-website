@@ -2,11 +2,15 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import { useState, useRef } from 'react'
 
+import AlertBox from '../ui/AlertBox'
+
 const WriteComment = ({slug, user}) => {
 
     let btnRef = useRef();
     const [commentVal, setCommentVal] = useState('')
     const [disabled, setDisabled] = useState(false)
+    const [alertText, setAlertText] = useState('')
+    const [alertType, setAlertType] = useState('')
 
     const sendData = async () => {
         try {
@@ -28,6 +32,10 @@ const WriteComment = ({slug, user}) => {
                       'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({comment: commentVal})
+                })
+                .then(() => {
+                    setAlertText("Comment Saved!")
+                    setAlertType("success")
                 })
         } catch (error) {
             console.log(error)
@@ -55,6 +63,7 @@ const WriteComment = ({slug, user}) => {
                 <button className="mt-2 px-4 w-auto h-10 bg-purple-200 dark:bg-purple-700 rounded hover:bg-purple-300 dark:hover:bg-purple-600 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none" 
                 type="submit" onClick={handleSubmit} ref={btnRef}><span>{disabled ? '💾 saving...' : 'Save 💬'}</span></button>
             </form>
+            {alertText && <AlertBox text={alertText} type={alertType} setAlertText={setAlertText} setAlertType={setAlertType}/>}
         </div>
     )
 }

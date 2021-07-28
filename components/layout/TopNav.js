@@ -19,7 +19,7 @@ export default function TopNav({toggleMode, currentMode}){
     //       setLoggedInUserClaims(user?.adminClaims)
     //     }
     //   }, [user])
-
+    // console.log(user)
     return (
         <div className="bg-gray-300 dark:bg-gray-800">
             <div className="lg:w-3/5 mx-auto flex justify-between items-center">
@@ -93,6 +93,12 @@ export default function TopNav({toggleMode, currentMode}){
                                 <a className="cursor-pointer">My Stats</a>
                             </Link>
                         </li>
+                        {user?.adminClaims === 'Site Admin' ? <li onClick={()=> toggleMode()}> 
+                            <Link href='/admin' passHref>
+                                <a className="cursor-pointer">Admin Area</a>
+                            </Link>
+                        </li> : ''}
+                        
                         {user ? <li onClick={()=> toggleMode()}>
                             <div className="inline text-red-700 bg-red-200 dark:text-red-200 dark:bg-red-700 px-3 py-2 rounded" onClick={() => logout()}>
                                 <a className="inline cursor-pointer">Logout</a>
