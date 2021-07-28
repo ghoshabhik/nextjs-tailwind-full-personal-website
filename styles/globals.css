@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.highlighted-link {
+    @apply border-b-2 border-yellow-300 dark:border-yellow-600 py-0
+ }

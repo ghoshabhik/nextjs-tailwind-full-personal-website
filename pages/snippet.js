@@ -4,7 +4,6 @@ import useSWR from 'swr'
 
 import SimpleCard from '../components/ui/SimpleCard'
 import SearchBox from '../components/ui/SearchBox'
-import BreadCrumb from '../components/ui/BreadCrumb'
 import TagCloud from '../components/ui/TagCloud'
 
 import fetcher from '../lib/fetcher'
@@ -72,7 +71,6 @@ export default function Snippet({ snippets }) {
     return (
       <div className="lg:w-3/6 mx-auto mb-10">
         <div className="mb-5">
-          <BreadCrumb links={[{name: 'HOME', linkUrl: ''}]}/>
           <p className="text-4xl font-bold mb-3">Snippets</p>
           <p className="text-xl text-gray-600 dark:text-gray-400">Snippets are code bits that you can easily copy and paste into your project. Use the searchbox below to filter snippets by title or filter by tags.</p>
         </div>

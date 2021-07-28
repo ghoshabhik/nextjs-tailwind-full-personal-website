@@ -1,7 +1,6 @@
 import UploadForm from '../components/ui/UploadForm';
 import ImageGrid from '../components/ui/ImageGrid';
 import ImageModal from '../components/ui/ImageModal';
-import BreadCrumb from '../components/ui/BreadCrumb';
 
 import { useUser } from '../firebase/useUser'
 
@@ -14,7 +13,7 @@ export default function Photography() {
   const { user } = useUser()
 
   useEffect(() => {
-    // console.log('Admin Claims ---- ',user?.adminClaims)
+    console.log(selectedImg?.height, selectedImg?.width) 
     if(user){
       setLoggedInUserClaims(user?.adminClaims)
     }
@@ -25,7 +24,6 @@ export default function Photography() {
     <div >
       <main className="">
       <div className="m-5 text-center">
-          <BreadCrumb links={[{name: 'HOME', linkUrl: ''}]}/>
           <p className="text-4xl font-bold mb-3">My Photography Page</p>
           <p className="text-xl text-gray-600 dark:text-gray-400">This is probably my favourite hobbies. Here are some of my photographs</p>
         </div>

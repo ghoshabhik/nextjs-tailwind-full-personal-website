@@ -1,5 +1,5 @@
 import Link from 'next/link'
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useState, useEffect } from 'react'
 import {useTheme} from 'next-themes'
 import { useUser } from '../../firebase/useUser'
@@ -10,10 +10,24 @@ export default function TopNavigation({toggleMode, currentMode}){
     const { user, logout } = useUser()
     const [currentTheme, setCurrentTheme] = useState('light')
     const [navBar, setNavBar] = useState(false)
+    const [currentRoute, setCurrentRoute] = useState('')
+    const router = useRouter()
     
     
     useEffect(() => {
-
+        if(router.pathname === '/'){
+            setCurrentRoute('home')
+        }
+        if(router.pathname.includes('about')){
+            setCurrentRoute('about')
+        }
+        if(router.pathname.includes('photography')){
+            setCurrentRoute('photography')
+        }
+        if(router.pathname.includes('snippet')){
+            setCurrentRoute('project')
+        }
+        
         const handleScroll = () => {
           if(window.scrollY > 40){
             setNavBar(true)
@@ -23,7 +37,9 @@ export default function TopNavigation({toggleMode, currentMode}){
         }
     
     window.addEventListener('scroll', handleScroll)
-    })
+    },[router])
+
+    // console.log(currentRoute)
 
     return (
         <div className={navBar ? 'fixed top-0 w-full z-10 mx-auto backdrop-filter backdrop-blur-md' : 
@@ -33,7 +49,7 @@ export default function TopNavigation({toggleMode, currentMode}){
                 <div className="">
                     <Link href='/' passHref>
                         <a className="cursor-pointer flex items-center lg:text-4xl text-3xl font-bold p-3 font-header">
-                        Abhik Ghosh
+                        Abhik Ghosh    
                         </a>
                     </Link>
                 </div>
@@ -42,22 +58,22 @@ export default function TopNavigation({toggleMode, currentMode}){
                     <ul className="space-x-2  flex justify-between items-center">
                         <li >
                             <Link href='/' passHref>
-                                <a className="cursor-pointer">Home</a>
+                                <a className={currentRoute === 'home' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Home</a>
                             </Link>
                         </li>
                         <li >
                             <Link href='/snippet' passHref>
-                                <a className="cursor-pointer">Projects</a>
+                                <a className={currentRoute === 'project' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Projects</a>
                             </Link>
                         </li>
                         <li >
                             <Link href='/photography' passHref>
-                                <a className="cursor-pointer">Photography</a>
+                                <a className={currentRoute === 'photography' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Photography</a>
                             </Link>
                         </li>
                         <li >
-                            <Link href='/blogs' passHref>
-                                <a className="cursor-pointer">About Me</a>
+                            <Link href='/about' passHref>
+                                <a className={currentRoute === 'about' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>About Me</a>
                             </Link>
                         </li>
                         
@@ -73,7 +89,7 @@ export default function TopNavigation({toggleMode, currentMode}){
                     </li>
                         }
                     </ul>
-                            
+                        
                 </nav>
                 <div className="flex items-center justify-between">
                     
@@ -82,15 +98,15 @@ export default function TopNavigation({toggleMode, currentMode}){
                         setCurrentTheme(theme === 'dark' ? 'light' : 'dark')
                         }}
                         className=""
-                        >{currentTheme === 'dark' ? <div className="flex space-x-4">
+                        >{currentTheme === 'dark' ? <div className="flex space-x-4 border-2 p-1 rounded dark:border-gray-600">
                             <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
+                        </svg> 
                         </div> : 
-                        <div className="flex space-x-5">
+                        <div className="flex space-x-5 border-2 p-1 rounded">
                             <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        </svg>
+                        </svg> 
                         </div> } 
                     </button>
                     <button className="p-3 focus:outline-none lg:hidden" onClick={()=> toggleMode()}>

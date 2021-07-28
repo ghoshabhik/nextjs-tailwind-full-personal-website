@@ -27,7 +27,7 @@ export default function Container(props) {
             </Head>
             <TopNavigation toggleMode={toggleMode} currentMode={currentMode}/>
             
-            <div className="mx-auto bg-gray-50 dark:bg-gray-800 py-20 rounded shadow my-10">
+            <div className=" dark:bg-gray-900 py-20 rounded shadow my-5">
                     {children}  
             </div>
             <Footer />
