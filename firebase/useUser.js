@@ -24,7 +24,7 @@ const useUser = (redirectPageUrl) => {
             .signOut()
             .then(() => {
                 // Sign-out successful.
-                router.push(redirectPageUrl)
+                // router.push(redirectPageUrl)
             })
             .catch((e) => {
                 console.error(e)

@@ -12,7 +12,7 @@ const getUserPageLike = async (req, res) => {
     const pageData = resp.data()
     var pageUsers = []
 
-    if(pageData){
+    if(pageData && pageData.users){
         pageUsers = pageData.users
         if(pageUsers.includes(req.query.user_id)){
             return res.status(200).json({

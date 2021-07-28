@@ -1,30 +1,40 @@
 import admin from '../../lib/all-admin'
 
-const reconcileLikes = (req, res) => {
+const reconcileComments = (req, res) => {
 
     const userRef = admin.firestore().collection("users").doc(req.query.user_id)
     const pageRef = admin.firestore().collection("pages").doc(req.query.slug)
+    const timestamp = new Date().toString()
+    console.log(req.body)
+
+    const value = {
+        slug: req.query.slug,
+        user_id: req.query.user_id,
+        user_email: req.query.user_email,
+        comment: req.body.comment,
+        timestamp
+    }
 
     const getUserData = async (userRef) => {
+
         let resp = await userRef.get()
         let userData = resp.data()
-        console.log('userdata ----', userData)
         if(!userData){
             userRef.set({
                 user_id: req.query.user_id,
-                pages: [req.query.slug]
+                comments: [value]
             })
             resp = await userRef.get()
             userData = resp.data()
         } else{
-            if(!userData.pages){
+            if(!userData.comments){
                 userRef.set({
-                    pages: [req.query.slug]
+                    comments: [value]
                 }, {merge: true})
             }
             else{
                 userRef.set({
-                    pages: [...userData.pages, req.query.slug]
+                    comments: [...userData.comments, value]
                 }, {merge: true})
             }
         }
@@ -35,23 +45,21 @@ const reconcileLikes = (req, res) => {
     const getPageData = async (pageRef) => {
         let resp = await pageRef.get()
         let pageData = resp.data()
-        console.log('pagedata ----', pageData)
         if(!pageData){
             pageRef.set({
-                slug: req.query.slug,
-                users: [req.query.user_id]
+                slug: req.query.slug
             })
             resp = await pageRef.get()
             pageData = resp.data()
-        }else{
-            if(!pageData.users){
+        } else{
+            if(!pageData.comments){
                 pageRef.set({
-                    users: [req.query.user_id]
+                    comments: [value]
                 }, {merge: true})
             }
             else{
                 pageRef.set({
-                    users: [...pageData.users, req.query.user_id]
+                    comments: [...pageData.comments, value]
                 }, {merge: true})
             }
         }
@@ -59,12 +67,12 @@ const reconcileLikes = (req, res) => {
         return pageData
     }
 
-    const fireStoreUserData = getUserData(userRef)
-    const fireStorePageData = getPageData(pageRef)
+    getUserData(userRef)
+    getPageData(pageRef)
     
     return res.status(200).json({
-        status: "reconciled like"
+        status: "reconciled comment"
     })
 }
 
-export default reconcileLikes
+export default reconcileComments

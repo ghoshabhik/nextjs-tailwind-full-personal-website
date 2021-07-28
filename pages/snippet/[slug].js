@@ -78,16 +78,20 @@ export default function Slug({ snippet }) {
             <div className="prose lg:prose-xl dark:prose-dark">{documentToReactComponents(detailedInformation)}</div>
         </div>
         <div className="w-1/2 border-b-4 dark:border-gray-600 border-gray-200"></div>
-        <div className="flex items-center pb-10">
-          <p className="text-left">{'Posted on : '+new Date(snippet.sys.createdAt).toLocaleDateString("en-US", options)+' '}</p>
-          {tags.map((tag, index) => (
-                <span className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase" key={index}>#{ tag }</span>
-          ))}
-          {/* <p className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase">{views ? views+' views' : '---'}</p> */}
-          <div className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase"><ViewCount slug={slug}/></div>
+        <div className="flex flex-col justify-center items-center">
+          <div className="px-2 x-1 bg-gray-200 dark:bg-gray-700 uppercase"><ViewCount slug={slug}/></div>
+          <div className="my-2 py-2 space-y-2">
+            <p className="text-left">{'Posted on : '+new Date(snippet.sys.createdAt).toLocaleDateString("en-US", options)+' '}</p>
+            <div>
+            {tags.map((tag, index) => (
+                  <span className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase" key={index}>#{ tag }</span>
+            ))}
+            </div>
+          </div>
         </div>
         
         <LikeButton slug={slug}/>
+        
         
     </div>
   )

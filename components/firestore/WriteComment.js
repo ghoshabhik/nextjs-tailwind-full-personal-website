@@ -1,32 +1,60 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
-import { useUser } from '../../firebase/useUser'
+import { useState, useRef } from 'react'
 
-const WriteComment = ({slug, dataToBeWritten}) => {
-    const { user } = useUser()
-    const sendData = () => {
+const WriteComment = ({slug, user}) => {
+
+    let btnRef = useRef();
+    const [commentVal, setCommentVal] = useState('')
+    const [disabled, setDisabled] = useState(false)
+
+    const sendData = async () => {
         try {
             firebase
                 .firestore()
                 .collection('comments')
-                .doc(slug) 
+                .doc() 
                 .set({
-                    comment: dataToBeWritten,
-                    time_stamp: firebase.firestore.Timestamp.now(),
-                    user: user
+                    comment: commentVal,
+                    time_stamp: firebase.firestore.FieldValue.serverTimestamp(),
+                    user_id: user.id,
+                    user_email: user.email,
+                    slug: slug
                 })
                 .then(console.log('comment added'))
+                await fetch(`/api/reconcile-comments?user_id=${user.id}&slug=${slug}&user_email=${user.email}`,{
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({comment: commentVal})
+                })
         } catch (error) {
             console.log(error)
-            alert(error)
         }
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(btnRef.current){
+            btnRef.current.setAttribute("disabled", "disabled")
+        }
+        setDisabled(true)
+        console.log("Comment: ", commentVal)
+        sendData()
+        btnRef.current.removeAttribute("disabled")
+        setDisabled(false)
+        setCommentVal('')
+    }
+
     return (
-        <div >
-            <button onClick={sendData} className="px-4 w-auto h-10 bg-purple-200 dark:bg-purple-700 rounded-full hover:bg-purple-300 dark:hover:bg-purple-600 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
-                Send Data To Cloud Firestore
-            </button>
+        <div className="lg:w-2/5 w-full px-3">
+            <form className="flex flex-col" disabled={disabled}>
+                <textarea className="p-2 rounded focus:ring-0 bg-white dark:bg-gray-700" 
+                value={commentVal} placeholder="Question/ Comments?? Please enter here..." rows="5" onChange={(e) => setCommentVal(e.target.value)}></textarea>
+                <button className="mt-2 px-4 w-auto h-10 bg-purple-200 dark:bg-purple-700 rounded hover:bg-purple-300 dark:hover:bg-purple-600 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none" 
+                type="submit" onClick={handleSubmit} ref={btnRef}><span>{disabled ? '💾 saving...' : 'Save 💬'}</span></button>
+            </form>
         </div>
     )
 }

@@ -7,8 +7,8 @@ const pageLikes = async (req, res) => {
     const getPageData = async (pageRef) => {
         const resp = await pageRef.get()
         const pageData = resp.data()
-        console.log(pageData)
-        if(pageData){
+        // console.log(pageData)
+        if(pageData && pageData.users){
             return res.status(200).json({
                 page: req.query.slug,
                 likes: pageData.users.length

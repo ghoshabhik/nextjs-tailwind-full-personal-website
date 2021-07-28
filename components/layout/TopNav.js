@@ -1,4 +1,5 @@
 import Link from 'next/link'
+// import { useRouter } from "next/router";
 import { useState, useEffect } from 'react'
 import {useTheme} from 'next-themes'
 import { useUser } from '../../firebase/useUser'
@@ -7,8 +8,10 @@ export default function TopNav({toggleMode, currentMode}){
 
     const {theme, setTheme} = useTheme()
     const [currentTheme, setCurrentTheme] = useState('light')
-    // const [loggedInUserClaims, setLoggedInUserClaims] = useState(null);
     const { user, logout } = useUser()
+    // const router = useRouter()
+
+    // console.log(router.pathname)
 
     // useEffect(() => {
     //     // console.log('Nav Admin Claims ---- ',user?.adminClaims)
