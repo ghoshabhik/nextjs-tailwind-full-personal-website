@@ -1,6 +1,6 @@
 function Tick(){
     return(
-        <svg className="inline w-6 h-6 pb-1 text-green-500" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="inline w-6 h-6 pb-1 text-green-500" xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
     )
@@ -8,7 +8,7 @@ function Tick(){
 
 function Uni(){
     return(
-        <svg className="inline w-6 h-6 pb-1 text-blue-500" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="inline w-6 h-6 pb-1 text-blue-500" xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path d="M12 14l9-5-9-5-9 5 9 5z" />
         <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
@@ -52,7 +52,7 @@ export default function About() {
                     <a className="py-2 px-4 rounded-md
                     dark:bg-blue-800 bg-blue-200 text-gray-700 dark:text-gray-200"
                         href="https://docs.google.com/document/d/2121uAJ0N6VhN-h-YW9858Xae1RF09qjpWdXOReTz-1j_uA/edit?usp=sharing"
-                        target="_blank">Download Resume →</a>
+                        >Download Resume →</a>
                 </div>
                     
                 <div className="mt-10">
@@ -66,7 +66,7 @@ export default function About() {
                 </div>
                 <div className="mt-5">
                     <hr className="dark:text-blue-400 text-blue-700"/>
-                    <p className="dark:text-blue-400 text-blue-700 font-semibold pb-5">SKILLS & EXPERTISE</p> 
+                    <p className="dark:text-blue-400 text-blue-700 font-semibold pb-5">SKILLS &amp; EXPERTISE</p> 
                     <p>
                         <span className="font-semibold"><Tick /> Conventional ETL - </span>Talend Big Data, SSIS<br/>
                         <span className="font-semibold"><Tick /> Storage/ Data Lake - </span>HDFS, S3, Azure Blob Storage<br/>
@@ -96,7 +96,7 @@ export default function About() {
                     <p className="mb-10">Its not so long ago I started with long run. The city has its effect on me, I
                         guess. At work, I met many of my collegues and friends, who are pro marathon runners. I was so
                         inspired looking at their passion towards running that I decided to give it a try. I did run
-                        before but not with the goal of loving to run. I'm still building on my techniques but I love
+                        before but not with the goal of loving to run. I&apos;m still building on my techniques but I love
                         the fact that I enjoy running. Specially runnning early in the morning has a calming effect
                         throughout the day. I have participated in several half marathons in Mumbai, India. Hoping to
                         get qualified for my first 42.6KM in next TMM and then someday in the future - NYC marathon 🙂.
