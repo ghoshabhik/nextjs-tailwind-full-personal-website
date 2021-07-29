@@ -1,6 +1,6 @@
 function Tick(){
     return(
-        <svg className="inline w-6 h-6 pb-1 text-green-500" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="inline w-6 h-6 pb-1 text-green-500" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
     )
@@ -8,7 +8,7 @@ function Tick(){
 
 function Uni(){
     return(
-        <svg className="inline w-6 h-6 pb-1 text-blue-500" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="inline w-6 h-6 pb-1 text-blue-500" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path d="M12 14l9-5-9-5-9 5 9 5z" />
         <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
@@ -22,15 +22,15 @@ export default function About() {
         <div className="mb-5">
           <p className="font-bold text-3xl lg:text-4xl tracking-tight mb-4 text-black dark:text-white">Bio</p>
           <p className="text-xl text-gray-600 dark:text-gray-400">This is my Bio page. This page summerizes my professional experiences and technology I work with. You can also download my resume on this page for details.</p>
-          <div class="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mt-10">
-                <p class="mb-5">I am a Data Solution Architect with over 13 years of experience in software
+          <div className="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mt-10">
+                <p className="mb-5">I am a Data Solution Architect with over 13 years of experience in software
                     engineering. I have
                     led
                     design, development and management of IT Solution for many fortune five hundred companies, SMBs
                     and
                     startups during my service in this industry.
                 </p>
-                <p class="mb-5">
+                <p className="mb-5">
                     I am commited to help organizations achieve maximum benefits from their technology investments
                     and
                     push their IT operational boundaries. I have helped several customers discovering their wealth
@@ -39,7 +39,7 @@ export default function About() {
                     legacy systems integration while keeping their data and infrastructure secured than ever before.
                     Cost and resource optimization is and has always been a key focus area for me.
                 </p>
-                <p class="mb-10">I have a deep passion towards clean code and efficient design techniques. I am a life-long
+                <p className="mb-10">I have a deep passion towards clean code and efficient design techniques. I am a life-long
                     learner
                     and an avid reader. I love to contribute to the community by means of blogging, speaking at
                     forums
@@ -48,52 +48,52 @@ export default function About() {
                     better
                     version of yourself. 🙂</p>
                    
-                <div class="mt-10">
-                    <a class="py-2 px-4 rounded-md
+                <div className="mt-10">
+                    <a className="py-2 px-4 rounded-md
                     dark:bg-blue-800 bg-blue-200 text-gray-700 dark:text-gray-200"
                         href="https://docs.google.com/document/d/2121uAJ0N6VhN-h-YW9858Xae1RF09qjpWdXOReTz-1j_uA/edit?usp=sharing"
                         target="_blank">Download Resume →</a>
                 </div>
                     
-                <div class="mt-10">
-                    <hr class="dark:text-blue-400 text-blue-700" />
-                    <p class="dark:text-blue-400 text-blue-700 font-semibold pb-5">PROFESSIONAL EXPERIENCE</p> 
+                <div className="mt-10">
+                    <hr className="dark:text-blue-400 text-blue-700" />
+                    <p className="dark:text-blue-400 text-blue-700 font-semibold pb-5">PROFESSIONAL EXPERIENCE</p> 
                     <p>
-                        <span class="font-semibold">Data Architect - </span>Experience in Datawarehouse schema design, ETL solution architecting, Apache Spark Streaming Data pipeline redesign. Tools evaluation for data platform modernization. Cloud integration and orchastration with Azure Data Factory, Databricks. Complete solution architecting for Metadata Magangement in Azure Data Catalog. Implementanting and securing consumption layer and Data APIs<br/>
-                        <span class="font-semibold">Data Engineer - </span>Developed optimal data pipeline architecture for Datawarehouse solutions. Built infrastructure required for optimal extraction, transformation, and loading of data and Data APIs from a wide variety of data sources using SQL, No SQL and Azure technologies. Created data tools for analytics and data scientist team members. Optimized data delivery and re-designed infrastructure for greater scalability<br/>
-                        <span class="font-semibold">Application Developer - </span>Strong experience in Java Application Development with Struts, Spring, Hibernate, Springboot. <br/>
+                        <span className="font-semibold">Data Architect - </span>Experience in Datawarehouse schema design, ETL solution architecting, Apache Spark Streaming Data pipeline redesign. Tools evaluation for data platform modernization. Cloud integration and orchastration with Azure Data Factory, Databricks. Complete solution architecting for Metadata Magangement in Azure Data Catalog. Implementanting and securing consumption layer and Data APIs<br/>
+                        <span className="font-semibold">Data Engineer - </span>Developed optimal data pipeline architecture for Datawarehouse solutions. Built infrastructure required for optimal extraction, transformation, and loading of data and Data APIs from a wide variety of data sources using SQL, No SQL and Azure technologies. Created data tools for analytics and data scientist team members. Optimized data delivery and re-designed infrastructure for greater scalability<br/>
+                        <span className="font-semibold">Application Developer - </span>Strong experience in Java Application Development with Struts, Spring, Hibernate, Springboot. <br/>
                     </p>
                 </div>
-                <div class="mt-5">
-                    <hr class="dark:text-blue-400 text-blue-700"/>
-                    <p class="dark:text-blue-400 text-blue-700 font-semibold pb-5">SKILLS & EXPERTISE</p> 
+                <div className="mt-5">
+                    <hr className="dark:text-blue-400 text-blue-700"/>
+                    <p className="dark:text-blue-400 text-blue-700 font-semibold pb-5">SKILLS & EXPERTISE</p> 
                     <p>
-                        <span class="font-semibold"><Tick /> Conventional ETL - </span>Talend Big Data, SSIS<br/>
-                        <span class="font-semibold"><Tick /> Storage/ Data Lake - </span>HDFS, S3, Azure Blob Storage<br/>
-                        <span class="font-semibold"><Tick /> RDBMS - </span>SQL Server<br/>
-                        <span class="font-semibold"><Tick /> No SQL - </span>MongoDB, Cassandra<br/>
-                        <span class="font-semibold"><Tick /> Metadata Management - </span>Talend, Azure Data Catalog<br/>
-                        <span class="font-semibold"><Tick /> Stream Processing - </span>Spark Streaming, Apache Kafka<br/>
-                        <span class="font-semibold"><Tick /> Batch Processing - </span>Apache Spark, Spring Batch, Talend DI<br/>
-                        <span class="font-semibold"><Tick /> Language - </span>Java, Groovy, Python<br/>
-                        <span class="font-semibold"><Tick /> Framework - </span>Microservices - Spring Boot, Spring Cloud, Flask<br/>
-                        <span class="font-semibold"><Tick /> Integration - </span>Apache Camel, Apache Karaf<br/>
-                        <span class="font-semibold"><Tick /> Caching - </span>Redis<br/>
-                        <span class="font-semibold"><Tick /> Search - </span>Elasticsearch<br/>
+                        <span className="font-semibold"><Tick /> Conventional ETL - </span>Talend Big Data, SSIS<br/>
+                        <span className="font-semibold"><Tick /> Storage/ Data Lake - </span>HDFS, S3, Azure Blob Storage<br/>
+                        <span className="font-semibold"><Tick /> RDBMS - </span>SQL Server<br/>
+                        <span className="font-semibold"><Tick /> No SQL - </span>MongoDB, Cassandra<br/>
+                        <span className="font-semibold"><Tick /> Metadata Management - </span>Talend, Azure Data Catalog<br/>
+                        <span className="font-semibold"><Tick /> Stream Processing - </span>Spark Streaming, Apache Kafka<br/>
+                        <span className="font-semibold"><Tick /> Batch Processing - </span>Apache Spark, Spring Batch, Talend DI<br/>
+                        <span className="font-semibold"><Tick /> Language - </span>Java, Groovy, Python<br/>
+                        <span className="font-semibold"><Tick /> Framework - </span>Microservices - Spring Boot, Spring Cloud, Flask<br/>
+                        <span className="font-semibold"><Tick /> Integration - </span>Apache Camel, Apache Karaf<br/>
+                        <span className="font-semibold"><Tick /> Caching - </span>Redis<br/>
+                        <span className="font-semibold"><Tick /> Search - </span>Elasticsearch<br/>
                     </p>
                 </div>
-                <div class="my-5">
-                    <hr class="dark:text-blue-400 text-blue-700"/>
-                    <p class="dark:text-blue-400 text-blue-700 font-semibold pb-5">EDUCATION</p> 
+                <div className="my-5">
+                    <hr className="dark:text-blue-400 text-blue-700"/>
+                    <p className="dark:text-blue-400 text-blue-700 font-semibold pb-5">EDUCATION</p> 
                     <p>
-                        <Uni /> <span class="font-semibold">Bachelor of Technology in Electrical Engineering(2003 - 2007)</span> - West Bengal University of Technology, Kolkata <br/>
-                        <Uni /> <span class="font-semibold">Post Graduate Diploma in Data Science(2018 - 2019)</span> - International Institute of Information Technology, Bangalore
+                        <Uni /> <span className="font-semibold">Bachelor of Technology in Electrical Engineering(2003 - 2007)</span> - West Bengal University of Technology, Kolkata <br/>
+                        <Uni /> <span className="font-semibold">Post Graduate Diploma in Data Science(2018 - 2019)</span> - International Institute of Information Technology, Bangalore
                     </p>
                 </div>
             </div>
 
-            <div class="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mt-10">
-                    <p class="mb-10">Its not so long ago I started with long run. The city has its effect on me, I
+            <div className="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mt-10">
+                    <p className="mb-10">Its not so long ago I started with long run. The city has its effect on me, I
                         guess. At work, I met many of my collegues and friends, who are pro marathon runners. I was so
                         inspired looking at their passion towards running that I decided to give it a try. I did run
                         before but not with the goal of loving to run. I'm still building on my techniques but I love
@@ -101,7 +101,7 @@ export default function About() {
                         throughout the day. I have participated in several half marathons in Mumbai, India. Hoping to
                         get qualified for my first 42.6KM in next TMM and then someday in the future - NYC marathon 🙂.
                     </p>
-                    <p class="">
+                    <p className="">
                         So thats runnning, but I find a great deal of happiness in photography too. I feel,
                         photography is an emotional expression of an individual. You see more intensive red colors after
                         drinking coffee - thats science but you cannot see colors like Eliot Porter(who by the way,
