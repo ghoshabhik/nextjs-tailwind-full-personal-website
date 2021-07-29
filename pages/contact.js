@@ -31,7 +31,7 @@ const Contact = () => {
                 })
                 .then(async () => {
                     console.log('message added')
-                    await fetch(`/api/reconcile-comments?user_id=${user.id}&slug=${'WEBSITECONTACT'}&user_email=${user.email}`,{
+                    await fetch(`/api/reconcile-comments?user_id=${user.id}&slug=WEBSITECONTACT&user_email=${user.email}`,{
                         method: 'POST',
                         headers: {
                           'Content-Type': 'application/json'
