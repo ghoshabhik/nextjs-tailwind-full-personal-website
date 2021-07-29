@@ -108,7 +108,7 @@ export default function Slug({ snippet }) {
           ))}
         </div>
         </div>
-        <div className="lg:w-2/5">
+        <div className="w-full lg:w-2/5 px-2">
         <LikeButton slug={slug} contentType={'snippet'}/>
         </div>
         

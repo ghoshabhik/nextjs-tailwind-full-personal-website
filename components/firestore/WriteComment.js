@@ -56,7 +56,7 @@ const WriteComment = ({slug, user}) => {
     }
 
     return (
-        <div className="w-full px-3">
+        <div className="w-full lg:px-3">
             <form className="flex flex-col" disabled={disabled}>
                 <textarea className="p-2 rounded border focus:ring-0 bg-white dark:bg-gray-700" 
                 value={commentVal} placeholder="Question/ Comments?? Please enter here..." rows="5" onChange={(e) => setCommentVal(e.target.value)}></textarea>

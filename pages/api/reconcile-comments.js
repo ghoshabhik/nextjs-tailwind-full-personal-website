@@ -75,7 +75,9 @@ const reconcileComments = (req, res) => {
     
     return res.status(200).json({
         status: "reconciled comment",
-        useData: userData
+        useData: userData,
+        pageData: pageData,
+        msg: 'success'
     })
 }
 
