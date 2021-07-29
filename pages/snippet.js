@@ -80,7 +80,7 @@ export default function Snippet({ snippets }) {
         <TagCloud posts={filteredSnippets} selectedTag={selectedTag}/>
         <div className="mt-5">
           {filteredSnippets.map((snippet, index) => (
-            <SimpleCard key={index} snippet={snippet.fields}/>
+            <SimpleCard key={index} snippet={snippet.fields} contentType={'snippet'}/>
           ))}
         </div>
         

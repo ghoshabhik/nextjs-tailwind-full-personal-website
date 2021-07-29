@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { createClient } from 'contentful'
 import useSWR from 'swr'
 import fetcher from '../lib/fetcher'
-import { IconContext } from "react-icons";
 
 import { HiOutlineMail } from "react-icons/hi";
-import { FaMediumM, FaLinkedin, FaGithub, FaStackOverflow, FaFileDownload } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 import SimpleCard from '../components/ui/SimpleCard'
+import Message from '../components/firestore/Message'
 import { getAllFilesFrontMatter } from '../lib/mdx'
 
 export default function Home({ snippets, posts }) {
@@ -61,12 +61,12 @@ export default function Home({ snippets, posts }) {
               </div>
             
             <div className="w-1/2 mx-auto  mb-28 border-b-4 dark:border-gray-600 border-gray-200"></div>
-            <div className="grid grid-cols-1 md:grid-cols-2 my-10 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 my-10 gap-5">
               <div className="lg:p-3 rounded-md lg:border dark:border-gray-700">
                 <p className="text-3xl font-semibold my-3 text-center">📄 Latest from the Blog</p>
                 <div>
                 {posts.slice(0,3).map((post, index) => (
-                  <SimpleCard key={index} snippet={post}/>
+                  <SimpleCard key={index} snippet={post} contentType={'blog'}/>
                 ))}
                 </div>
                 <Link href='/blog' passHref>
@@ -78,7 +78,7 @@ export default function Home({ snippets, posts }) {
                 <p className="text-3xl font-semibold tracking-tight my-3 text-center ">💻 Featured Projects</p>
                 <div>
                 {snippets.slice(0,5).map((snippet, index) => (
-                  <SimpleCard key={index} snippet={snippet.fields}/>
+                  <SimpleCard key={index} snippet={snippet.fields} contentType={'snippet'}/>
                 ))}
                 </div>
                 <Link href='/snippet' passHref>
@@ -89,6 +89,7 @@ export default function Home({ snippets, posts }) {
             </div>
 
         </div>
+        <Message />
         
       </div>
   )

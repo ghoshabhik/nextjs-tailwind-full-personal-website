@@ -1,14 +1,14 @@
 import Link from 'next/link'
 
 
-export default function SimpleCard({ snippet }) {
+export default function SimpleCard({ snippet, contentType }) {
   
     const { slug, title, description } = snippet
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
     // console.log(snippet)
     return (
       <div className="block my-3 py-3 ">
-            <Link href={'/snippet/' + slug} passHref>
+            <Link href={'/'+contentType+'/' + slug} passHref>
                 <a>
                     <div className="grid lg:grid-cols-5 grid-cols-1">
                         <p className="text-lg md:text-xl font-medium lg:col-span-4">{title}</p>

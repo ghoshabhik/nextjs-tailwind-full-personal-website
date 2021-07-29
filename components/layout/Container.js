@@ -23,7 +23,7 @@ export default function Container(props) {
             <Head>
                 <title>Abhik Ghosh | Personal Website</title>
                 <meta name="description" content="Personal website to showcase my work, projects and writing" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/images/site/favicon.ico" />
             </Head>
             <TopNavigation toggleMode={toggleMode} currentMode={currentMode}/>
             
