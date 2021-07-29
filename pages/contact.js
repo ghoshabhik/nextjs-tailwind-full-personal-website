@@ -29,18 +29,25 @@ const Contact = () => {
                     user_id: user.id,
                     user_email: user.email
                 })
-                .then(console.log('message added'))
-                await fetch(`/api/reconcile-comments?user_id=${user.id}&slug=${'WEBSITECONTACT'}&user_email=${user.email}`,{
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({comment: commentVal})
-                })
                 .then(() => {
-                    setAlertText("✨ Your message is saved! ✨")
-                    setAlertType("success")
-                }).catch(() => {
+                    console.log('message added')
+                    await fetch(`/api/reconcile-comments?user_id=${user.id}&slug=${'WEBSITECONTACT'}&user_email=${user.email}`,{
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({comment: commentVal})
+                    })
+                    .then(() => {
+                        setAlertText("✨ Your message is saved! ✨")
+                        setAlertType("success")
+                    })
+                    .catch(() => {
+                        setAlertText("😒 there is some problem saving your message at this time, Please send me an email at abhik.ghosh5@gmail.com.")
+                        setAlertType("error")
+                    })
+                })
+                .catch(() => {
                     setAlertText("😒 there is some problem saving your message at this time, Please send me an email at abhik.ghosh5@gmail.com.")
                     setAlertType("error")
                 })
