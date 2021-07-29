@@ -29,7 +29,7 @@ const Contact = () => {
                     user_id: user.id,
                     user_email: user.email
                 })
-                .then(() => {
+                .then(async () => {
                     console.log('message added')
                     await fetch(`/api/reconcile-comments?user_id=${user.id}&slug=${'WEBSITECONTACT'}&user_email=${user.email}`,{
                         method: 'POST',
