@@ -114,12 +114,12 @@ export default function TopNavigation({toggleMode, currentMode}){
                         setCurrentTheme(theme === 'dark' ? 'light' : 'dark')
                         }}
                         className=""
-                        >{currentTheme === 'dark' ? <div className="flex space-x-4 border-2 p-1 rounded dark:border-gray-600">
+                        >{currentTheme === 'dark' ? <div className="flex space-x-4">
                             <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                         </svg> 
                         </div> : 
-                        <div className="flex space-x-5 border-2 p-1 rounded">
+                        <div className="flex space-x-5">
                             <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg> 
@@ -137,48 +137,38 @@ export default function TopNavigation({toggleMode, currentMode}){
                 <div className="mr-2 block lg:hidden text-center mt-3">{user ? <div className="font-semibold text-purple-700 bg-purple-200 dark:text-purple-200 dark:bg-purple-700 px-2 py-1 rounded"> Hello, {user.name}</div> : <></>}</div>
                 <nav className="flex flex-col justify-between"> 
                     <ul className="space-y-3 text-center lg:text-left">
-                        <li onClick={()=> toggleMode()}>
+                    <li onClick={() => toggleMode('close')}>
                             <Link href='/' passHref>
-                                <a className="cursor-pointer">Home</a>
+                                <a className={currentRoute === 'home' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Home</a>
                             </Link>
                         </li>
-                        <li onClick={()=> toggleMode()}>
-                            <Link href='/project' passHref>
-                                <a className="cursor-pointer">Projects</a>
-                            </Link>
-                        </li>
-                        <li onClick={()=> toggleMode()}>
+                        <li onClick={() => toggleMode('close')}>
                             <Link href='/snippet' passHref>
-                                <a className="cursor-pointer">Snippets</a>
+                                <a className={currentRoute === 'project' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Projects</a>
                             </Link>
                         </li>
-                        <li onClick={()=> toggleMode()}>
+                        <li onClick={() => toggleMode('close')}>
+                            <Link href='/blog' passHref>
+                                <a className={currentRoute === 'blog' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Blog</a>
+                            </Link>
+                        </li>
+                        <li onClick={() => toggleMode('close')}>
                             <Link href='/photography' passHref>
-                                <a className="cursor-pointer">Photography</a>
+                                <a className={currentRoute === 'photography' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Photography</a>
                             </Link>
                         </li>
-                        <li onClick={()=> toggleMode()}>
-                            <Link href='/blogs' passHref>
-                                <a className="cursor-pointer">About Me</a>
+                        <li onClick={() => toggleMode('close')}>
+                            <Link href='/about' passHref>
+                                <a className={currentRoute === 'about' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Bio</a>
                             </Link>
                         </li>
-                        <li onClick={()=> toggleMode()}> 
-                            <Link href='/blogs' passHref>
-                                <a className="cursor-pointer">My Stats</a>
-                            </Link>
-                        </li>
-                        {user?.adminClaims === 'Site Admin' ? <li onClick={()=> toggleMode()}> 
-                            <Link href='/admin' passHref>
-                                <a className="cursor-pointer">Admin Area</a>
-                            </Link>
-                        </li> : ''}
                         
-                        {user ? <li onClick={()=> toggleMode()}>
+                        {user ? <li onClick={() => toggleMode('close')}>
                             <div className="inline text-red-700 bg-red-200 dark:text-red-200 dark:bg-red-700 px-3 py-2 rounded" onClick={() => logout()}>
                                 <a className="inline cursor-pointer">Logout</a>
                             </div>
                         </li> :
-                        <li onClick={()=> toggleMode()}>
+                        <li onClick={() => toggleMode('close')}>
                         <Link href='/auth' passHref>
                             <a className="cursor-pointer">Login</a>
                         </Link>

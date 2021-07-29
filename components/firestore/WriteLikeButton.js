@@ -38,9 +38,9 @@ const WriteLikeButton = ({slug, user}) => {
     }
 
     return (
-        <div className="text-purple-700 dark:text-purple-200">
+        <div className="text-gray-700 dark:text-gray-200">
               <button ref={btnRef} onClick={likePage} disabled={disabled}
-                      className="px-4 w-auto h-10 bg-purple-200 dark:bg-purple-700 rounded-full hover:bg-purple-300 dark:hover:bg-purple-600 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
+                      className="px-4 w-auto h-10 bg-red-200 dark:bg-red-700 rounded-full hover:bg-red-300 dark:hover:bg-red-600 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
                 <span>{disabled ? "❤️ Liking it..." : "Liked this page? 🧐"}</span>
               </button>
         </div>

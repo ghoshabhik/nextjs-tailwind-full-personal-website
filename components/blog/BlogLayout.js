@@ -2,9 +2,10 @@ import Image from 'next/image';
 import { parseISO, format } from 'date-fns';
 
 import ViewCount from '../ui/ViewCount';
+import LikeButton from '../../components/ui/LikeButton'
 
 const editUrl = (slug) =>
-  `https://github.com/leerob/leerob.io/edit/main/data/blog/${slug}.mdx`;
+  `https://github.com/ghoshabhik/nextjs-tailwind-full-personal-website/edit/main/data/blog/${slug}.mdx`;
 // const discussUrl = (slug) =>
 //   `https://mobile.twitter.com/search?q=${encodeURIComponent(
 //     `https://leerob.io/blog/${slug}`
@@ -60,6 +61,10 @@ export default function BlogLayout({ children, frontMatter }) {
             {'Edit on GitHub'}
           </a>
         </div>
+        <div className="w-full flex justify-center my-10"><div className="w-1/2 border-b-4 dark:border-gray-600 border-gray-200"></div></div>
+        
+        <div className="w-full"><LikeButton slug={frontMatter.slug} contentType={'blog'}/></div>
+        
       </article>
   );
 }

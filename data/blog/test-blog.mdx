@@ -1,0 +1,88 @@
+---
+title: 'Content Consumption'
+publishedAt: '2018-07-11'
+description: 'Using RSS to aggregate and simplify how I consume media.'
+image: '/static/images/optimizing-my-digital-content-consumption/banner.png'
+---
+
+<Image
+  alt={`Feedly & Instapaper`}
+  src={`/static/images/optimizing-my-digital-content-consumption/banner.png`}
+  width={1200}
+  height={630}
+  priority
+/>
+
+One ofdsfsdfds
+## The Old Way
+
+My old process consisted of two main sources: [Reddit](https://www.reddit.com/) and [Hacker News](https://news.ycombinator.com/). I'm sure most people know what Reddit is by now, given that it's the 3rd most visited website in the US. Hacker News is a stripped back Reddit-like aggregator ran by [Y Combinator](http://www.ycombinator.com/) specifically targeted at the tech industry. Users can upvote interesting content which makes it more discoverable to others. Simple as that.
+
+I'd check these websites dailfsdf
+- There was no shared history across both sources. Sure, Reddit has a view history and HN has an upvote history, but there's no single source of truth. This problem exacerbates itself when adding another source into the mix (e.g. NY Times).
+- My bookmarks were flooded with articles I wanted to save forever or read later. This list was starting to get out of hand (and again, not a single source of truth).
+- I wanted to consume more content sources, specifically news sites, without having to check 4-5 websites daily.
+- Lots of news sites have poorly designed interfaces filled with cruft. Your adblocker can only do so much. It doesn't surpass a paywall or improve the page layout.
+
+## The New Way
+
+I was able to solve the aforementioned issues using a combination of Feedly and Instapaper. Let's talk about these both individually.
+
+### Feedly
+
+<Image
+  alt={`Feedly`}
+  src={`/images/blog/testeste.jpg`}
+  width={2136}
+  height={1178}
+  className="rounded-lg"
+/>
+
+
+```js
+import db from '../../lib/db-admin';
+
+export default (req, res) => {
+  if (!req.query.id) {
+    return res.status(400).json({
+      error: 'Missing "id" query parameter'
+    });
+  }
+
+  const ref = db.ref('table').child(req.query.id);
+
+  return ref.once('value', (snapshot) => {
+    res.status(200).json({
+      total: snapshot.val()
+    });
+  });
+};
+```
+
+```js
+// lib/db-admin.js
+
+const admin = require('firebase-admin');
+
+try {
+  admin.initializeApp({
+    credential: admin.credential.cert({
+      client_email: process.env.FIREBASE_CLIENT_EMAIL,
+      private_key: process.env.FIREBASE_PRIVATE_KEY,
+      project_id: 'your-project-id'
+    }),
+    databaseURL: 'https://your-project-id.firebaseio.com'
+  });
+} catch (error) {
+  /*
+   * We skip the "already exists" message which is
+   * not an actual error when we're hot-reloading.
+   */
+  if (!/already exists/u.test(error.message)) {
+    console.error('Firebase admin initialization error', error.stack);
+  }
+}
+
+module.exports = admin.database();
+```
+
