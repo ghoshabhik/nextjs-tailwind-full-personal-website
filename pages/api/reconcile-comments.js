@@ -5,7 +5,10 @@ const reconcileComments = (req, res) => {
     const userRef = admin.firestore().collection("users").doc(req.query.user_id)
     const pageRef = admin.firestore().collection("pages").doc(req.query.slug)
     const timestamp = new Date().toString()
-    console.log(req.body)
+    console.log(req.body, req.query.user_id, req.query.slug)
+
+    let userData
+    let pageData
 
     const value = {
         slug: req.query.slug,
@@ -18,7 +21,7 @@ const reconcileComments = (req, res) => {
     const getUserData = async (userRef) => {
 
         let resp = await userRef.get()
-        let userData = resp.data()
+        userData = resp.data()
         if(!userData){
             userRef.set({
                 user_id: req.query.user_id,
@@ -44,7 +47,7 @@ const reconcileComments = (req, res) => {
 
     const getPageData = async (pageRef) => {
         let resp = await pageRef.get()
-        let pageData = resp.data()
+        pageData = resp.data()
         if(!pageData){
             pageRef.set({
                 slug: req.query.slug
@@ -71,7 +74,8 @@ const reconcileComments = (req, res) => {
     getPageData(pageRef)
     
     return res.status(200).json({
-        status: "reconciled comment"
+        status: "reconciled comment",
+        useData: userData
     })
 }
 
