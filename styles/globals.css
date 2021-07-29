@@ -7,3 +7,20 @@
 .highlighted-link {
     @apply border-b-2 border-yellow-300 dark:border-yellow-600 py-0
  }
+
+ .tooltip {
+    @apply invisible absolute;
+  }
+  
+  .has-tooltip:hover .tooltip {
+    @apply visible z-50;
+  }
+
+  .prose pre {
+    @apply border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900;
+  }
+  
+  .prose code {
+    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-gray-900;
+  }
+  

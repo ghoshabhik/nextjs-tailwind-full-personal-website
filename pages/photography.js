@@ -12,8 +12,7 @@ export default function Photography() {
   const [loggedInUserClaims, setLoggedInUserClaims] = useState(null);
   const { user } = useUser()
 
-  useEffect(() => {
-    console.log(selectedImg?.height, selectedImg?.width) 
+  useEffect(() => { 
     if(user){
       setLoggedInUserClaims(user?.adminClaims)
     }

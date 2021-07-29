@@ -32,11 +32,13 @@ export default function Snippet({ snippets }) {
   const [filteredSnippets, setFilteredSnippets] = useState(snippets)
   const { data } = useSWR(`/api/page-views`, fetcher, {refreshInterval: 2000})
 
+  // console.log(data)
+
   if(data){
     data.pageViews.map( page => {
       snippets.map((snippet,index) => {
         if(snippet.fields.slug === page.slug){
-          snippets[index].count = page.count
+          snippets[index].fields.count = page.count
         }
       })
     })
@@ -69,16 +71,16 @@ export default function Snippet({ snippets }) {
   }
   
     return (
-      <div className="lg:w-3/6 mx-auto mb-10">
+      <div className="lg:w-3/6 mx-auto mb-10 px-2 lg:px-0">
         <div className="mb-5">
-          <p className="text-4xl font-bold mb-3">Snippets</p>
-          <p className="text-xl text-gray-600 dark:text-gray-400">Snippets are code bits that you can easily copy and paste into your project. Use the searchbox below to filter snippets by title or filter by tags.</p>
+          <p className="lg:text-4xl text-3xl  font-bold mb-3 tracking-tight">Projects</p>
+          <p className="text-gray-600 dark:text-gray-400">These are my hobby side projects. These code bits can easily be copied and pasted into your project. Use the searchbox below to filter snippets by title or filter by tags.</p>
         </div>
-        <SearchBox handleType={handleType} placeholder={'Snippets'} />
+        <SearchBox handleType={handleType} placeholder={'Project'} />
         <TagCloud posts={filteredSnippets} selectedTag={selectedTag}/>
-        <div className="grid-rows-2 mt-5">
+        <div className="mt-5">
           {filteredSnippets.map((snippet, index) => (
-            <SimpleCard key={index} snippet={snippet}/>
+            <SimpleCard key={index} snippet={snippet.fields}/>
           ))}
         </div>
         

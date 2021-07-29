@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import useStorage from '../../firebase/useStorage';
 import { motion } from 'framer-motion';
 
-const ImageProgressBar = ({ file, setFile, size }) => {
-  const { progress, url } = useStorage(file, size);
+const ImageProgressBar = ({ file, setFile }) => {
+  const { progress, url } = useStorage(file);
 
   useEffect(() => {
     if (url) {

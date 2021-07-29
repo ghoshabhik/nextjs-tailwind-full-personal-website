@@ -64,6 +64,29 @@ export default function Slug({ snippet }) {
   return (
     <div className="flex flex-col items-center space-y-8">
         <BreadCrumb links={[{name: 'HOME', linkUrl: ''}, {name: 'ALL SNIPPETS', linkUrl: 'snippet'}, {name: `${slug}`, linkUrl: `snippet/${slug}`}]}/>
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+        { title }
+        </h1>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-2 mb-10">
+          <div className="flex items-center">
+            <Image
+              alt="Abhik Ghosh"
+              height={24}
+              width={24}
+              src="/images/site/profile1.jpg"
+              className="rounded-full"
+            />
+            <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
+              {'Abhik Ghosh / '}
+              {new Date(snippet.sys.createdAt).toLocaleDateString("en-US", options)}{` • `}
+            </p>
+          </div>
+          <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0 mx-2">
+            <ViewCount slug={slug}/>
+          </p>
+        </div>
+        
+        
         <div className="px-2 text-center">
             <Image 
             src={'https:' + featuredImage.fields.file.url}
@@ -72,22 +95,18 @@ export default function Slug({ snippet }) {
             className="rounded-md"
             alt=""
             />
-            <h2 className="text-3xl font-semibold my-8">{ title }</h2>
         </div>
         <div className="px-2">
             <div className="prose lg:prose-xl dark:prose-dark">{documentToReactComponents(detailedInformation)}</div>
         </div>
         <div className="w-1/2 border-b-4 dark:border-gray-600 border-gray-200"></div>
         <div className="flex flex-col justify-center items-center">
-          <div className="px-2 x-1 bg-gray-200 dark:bg-gray-700 uppercase"><ViewCount slug={slug}/></div>
-          <div className="my-2 py-2 space-y-2">
-            <p className="text-left">{'Posted on : '+new Date(snippet.sys.createdAt).toLocaleDateString("en-US", options)+' '}</p>
-            <div>
-            {tags.map((tag, index) => (
-                  <span className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase" key={index}>#{ tag }</span>
-            ))}
-            </div>
-          </div>
+          
+        <div>
+          {tags.map((tag, index) => (
+                <span className="px-2 mx-1 bg-gray-200 dark:bg-gray-700 uppercase" key={index}>#{ tag }</span>
+          ))}
+        </div>
         </div>
         
         <LikeButton slug={slug}/>

@@ -5,23 +5,13 @@ import ImageProgressBar from './ImageProgressBar';
 
 const UploadForm = () => {
   const [file, setFile] = useState(null);
-  const [size, setSize] = useState({});
   const [error, setError] = useState(null);
 
   const types = ['image/png', 'image/jpeg'];
 
   const handleChange = (e) => {
     let selected = e.target.files[0];
-    let img = new Image()
-    img.src = window.URL.createObjectURL(selected)
-    img.onload = () => {
-      // alert(img.width + " " + img.height);
-      setSize({
-        width: img.width,
-        height: img.height
-      })
-   }
-
+    console.log(selected)
     if (selected && types.includes(selected.type)) {
       setFile(selected);
       setError('');
@@ -44,7 +34,7 @@ const UploadForm = () => {
         <div className="output">
             { error && <div className="error">{ error }</div>}
             { file && <div>{ file.name }</div> }
-            { file && <ImageProgressBar file={file} setFile={setFile} size={size}/> }
+            { file && <ImageProgressBar file={file} setFile={setFile}/> }
         </div>
     </form>
     

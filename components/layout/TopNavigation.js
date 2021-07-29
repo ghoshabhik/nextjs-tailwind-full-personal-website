@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image';
 import { useRouter } from "next/router";
 import { useState, useEffect } from 'react'
 import {useTheme} from 'next-themes'
@@ -27,6 +28,9 @@ export default function TopNavigation({toggleMode, currentMode}){
         if(router.pathname.includes('snippet')){
             setCurrentRoute('project')
         }
+        if(router.pathname.includes('blog')){
+            setCurrentRoute('blog')
+        }
         
         const handleScroll = () => {
           if(window.scrollY > 40){
@@ -48,14 +52,21 @@ export default function TopNavigation({toggleMode, currentMode}){
             <div className="lg:w-3/5 mx-auto flex justify-between items-center">
                 <div className="">
                     <Link href='/' passHref>
-                        <a className="cursor-pointer flex items-center lg:text-4xl text-3xl font-bold p-3 font-header">
-                        Abhik Ghosh    
+                        <a className="cursor-pointer flex items-center lg:text-3xl text-3xl font-light p-3">
+                        <Image 
+                        src="/images/site/profile1.jpg"
+                        width={48}
+                        height={48}
+                        className="relative z-30 inline object-cover w-12 h-12 border-4 border-gray-500 rounded-full"
+                        alt="Profile Picture"
+                        /> 
                         </a>
+                        
                     </Link>
                 </div>
                 <div className="flex justify-end space-x-4">
                 <nav className="lg:flex justify-between items-center hidden text-lg"> 
-                    <ul className="space-x-2  flex justify-between items-center">
+                    <ul className="space-x-4 flex justify-between items-center">
                         <li >
                             <Link href='/' passHref>
                                 <a className={currentRoute === 'home' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Home</a>
@@ -67,13 +78,18 @@ export default function TopNavigation({toggleMode, currentMode}){
                             </Link>
                         </li>
                         <li >
+                            <Link href='/blog' passHref>
+                                <a className={currentRoute === 'blog' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Blog</a>
+                            </Link>
+                        </li>
+                        <li >
                             <Link href='/photography' passHref>
                                 <a className={currentRoute === 'photography' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Photography</a>
                             </Link>
                         </li>
                         <li >
                             <Link href='/about' passHref>
-                                <a className={currentRoute === 'about' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>About Me</a>
+                                <a className={currentRoute === 'about' ? 'highlighted-link cursor-pointer' : 'cursor-pointer'}>Bio</a>
                             </Link>
                         </li>
                         
