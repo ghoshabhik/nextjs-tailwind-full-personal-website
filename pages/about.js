@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image';
 
 function Tick(){
     return(
@@ -96,6 +97,11 @@ export default function About() {
                     </p>
                 </div>
             </div>
+            
+
+          <p className="font-bold text-3xl xl:text-4xl tracking-tight mb-4 text-black dark:text-white mt-20">Beyond work,</p>
+          <p className=" text-gray-600 dark:text-gray-400">
+          To myself sane in this fast paced world. </p>
 
             <div className="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mt-10">
                     <p className="mb-10">Its not so long ago I started with long run. The city has its effect on me, I
@@ -119,6 +125,26 @@ export default function About() {
                         photography. I dont know, whether I create art or snapshots. But I love my photography.🙂
                     </p>
                 </div>
+            
+                <div className="flex items-center justify-start space-x-4 mt-20 
+                border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 
+                bg-blue-50 dark:bg-gray-800">
+                <div className=" pt-2"><Image
+                    alt="Abhik Ghosh"
+                    height={60}
+                    width={60}
+                    src="/images/site/profile1.jpg"
+                    className="rounded-full"
+                    /></div>
+                <div><p className=" text-gray-600 dark:text-gray-400">
+                Hey, If you have come this far, definitely you'd like to say hello here on this <Link href={'/contact'} passHref><a className="highlighted-link">contact page →</a></Link> AND It was nice to meet you, have a great day!
+                </p></div>
+                
+                
+                </div>
+                
+                
+
         </div>
         
       </div>
