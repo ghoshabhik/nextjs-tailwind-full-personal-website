@@ -91,8 +91,8 @@ export default function About() {
                     <hr className="dark:text-blue-400 text-blue-700"/>
                     <p className="dark:text-blue-400 text-blue-700 font-semibold pb-5">EDUCATION</p> 
                     <p>
-                        <Uni /> <span className="font-semibold">Bachelor of Technology in Electrical Engineering(2003 - 2007)</span> - <a href="https://makautwb.ac.in/" target="_blank" className="dark:text-blue-400 text-blue-700">West Bengal University of Technology, Kolkata</a><br/>
-                        <Uni /> <span className="font-semibold">Post Graduate Diploma in Data Science(2018 - 2019)</span> - <a href="https://www.iiitb.ac.in/" target="_blank" className="dark:text-blue-400 text-blue-700">International Institute of Information Technology, Bangalore</a>
+                        <Uni /> <span className="font-semibold">Bachelor of Technology in Electrical Engineering(2003 - 2007)</span> - <a href="https://makautwb.ac.in/" target="_blank" rel="noreferrer" className="dark:text-blue-400 text-blue-700">West Bengal University of Technology, Kolkata</a><br/>
+                        <Uni /> <span className="font-semibold">Post Graduate Diploma in Data Science(2018 - 2019)</span> - <a href="https://www.iiitb.ac.in/" target="_blank" rel="noreferrer" className="dark:text-blue-400 text-blue-700">International Institute of Information Technology, Bangalore</a>
                     </p>
                 </div>
             </div>
