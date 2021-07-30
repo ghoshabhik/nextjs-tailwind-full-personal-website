@@ -9,7 +9,7 @@ const ImageGrid = ({ setSelectedImg }) => {
   return (
     <div className="img-grid mx-5 my-20 grid grid-cols-1 lg:grid-cols-3 gap-6">
       {docs && docs.map(doc => (
-        <motion.div className="img-wrap overflow-hidden h-72 relative opacity-80" key={doc.id} 
+        <motion.div className="img-wrap overflow-hidden h-72 relative opacity-80 rounded-xl shadow" key={doc.id} 
           layout
           whileHover={{ opacity: 1 }}s
           onClick={() => setSelectedImg(doc)}
@@ -33,7 +33,7 @@ const ImageGrid = ({ setSelectedImg }) => {
             <div style={{
                 position: 'relative',
                 height: 0,
-                paddingTop: `${( 500 / 800 ) * 100}%`,
+                paddingTop: `${( 800 / 800 ) * 100}%`,
                 backgroundImage: `url(${doc.url500})`,
                 backgroundPosition: 'center center',
                 backgroundSize: `100%`
@@ -47,9 +47,9 @@ const ImageGrid = ({ setSelectedImg }) => {
                   src={doc.url}
                   alt="Galaxy"
                   width={800}
-                  height={500}
+                  height={800}
                   unoptimized={true}
-                  className="rounded border border-gray-700 cursor-pointer"
+                  className="rounded-lg border border-gray-700 cursor-pointer"
                 />
               </div>
             </div>

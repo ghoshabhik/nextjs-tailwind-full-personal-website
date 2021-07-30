@@ -81,7 +81,7 @@ const Contact = () => {
                         type="submit" onClick={handleSubmit} ref={btnRef}><span>{disabled ? '💾 saving...' : 'Save'}</span></button>
                     </form> : <div className="">
                 
-                <p className="text-gray-600 dark:text-gray-400">Leave a comment here. It could be anything – appreciation, information, wisdom, or even humor.</p>
+                <p className="text-gray-600 dark:text-gray-400">Please login here with your gmail or github account. You may choose to write to me on <span className="highlighted-link">abhik.ghosh5@gmail.com</span> in case you do not want to login here!!</p>
                 <button onClick={() => setShowLogin(!showLogin)} className="bg-gray-400 dark:bg-gray-600 mt-5 px-3 py-1 rounded">
                     {showLogin ? <span className="text-bold">🤐</span> : <span className="text-bold">Login</span>}
                 </button>

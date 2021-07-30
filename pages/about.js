@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 function Tick(){
     return(
         <svg className="inline w-6 h-6 pb-1 text-green-500" xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -21,8 +23,11 @@ export default function About() {
     <div className="xl:w-3/6 lg:w-5/6 mx-auto mb-10 px-2 xl:px-0">
         <div className="mb-5">
           <p className="font-bold text-3xl xl:text-4xl tracking-tight mb-4 text-black dark:text-white">Bio</p>
-          <p className=" text-gray-600 dark:text-gray-400">This is my Bio page. This page summerizes my professional experiences and technology I work with. You can also download my resume on this page for details.</p>
-          <div className="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mt-10">
+          <p className=" text-gray-600 dark:text-gray-400">
+          This page summerizes my professional and technology experiences, and highlights different roles I have progressed through 
+          over past few years in software industry. You can download my resume on this page for details. Or even better,
+          drop by to say hello here on the <Link href={'/contact'} passHref><a className="highlighted-link">contact page →</a></Link></p>
+          <div className="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mt-10 lg:text-lg">
                 <p className="mb-5">I am a Data Solution Architect with over 13 years of experience in software
                     engineering. I have
                     led
@@ -86,8 +91,8 @@ export default function About() {
                     <hr className="dark:text-blue-400 text-blue-700"/>
                     <p className="dark:text-blue-400 text-blue-700 font-semibold pb-5">EDUCATION</p> 
                     <p>
-                        <Uni /> <span className="font-semibold">Bachelor of Technology in Electrical Engineering(2003 - 2007)</span> - West Bengal University of Technology, Kolkata <br/>
-                        <Uni /> <span className="font-semibold">Post Graduate Diploma in Data Science(2018 - 2019)</span> - International Institute of Information Technology, Bangalore
+                        <Uni /> <span className="font-semibold">Bachelor of Technology in Electrical Engineering(2003 - 2007)</span> - <a href="https://makautwb.ac.in/" target="_blank" className="dark:text-blue-400 text-blue-700">West Bengal University of Technology, Kolkata</a><br/>
+                        <Uni /> <span className="font-semibold">Post Graduate Diploma in Data Science(2018 - 2019)</span> - <a href="https://www.iiitb.ac.in/" target="_blank" className="dark:text-blue-400 text-blue-700">International Institute of Information Technology, Bangalore</a>
                     </p>
                 </div>
             </div>

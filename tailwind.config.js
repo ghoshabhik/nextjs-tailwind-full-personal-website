@@ -30,21 +30,26 @@ module.exports = {
           css: {
             color: theme('colors.gray.800'),
             a: {
-              color: theme('colors.blue.700'),
+              textDecoration: 'none',
+              color: '#CE3F37',
+              borderBottom: '2px solid #fcd34d', 
               '&:hover': {
-                  color: theme('colors.blue.700'),
+                borderBottom: '0px solid #fcd34d', 
               },
-          },
+            },
           },
         },
         dark: {
           css: {
               color: theme('colors.gray.300'),
               a: {
-                  color: theme('colors.blue.500'),
+                  textDecoration: 'none',
+                  color: '#CE3F37',
+                  borderBottom: '2px solid #D97706',
                   '&:hover': {
-                      color: theme('colors.blue.500'),
+                    borderBottom: '2px solid #CE3F37', 
                   },
+                  border: theme('border-b-2')
               },
 
               h1: {
