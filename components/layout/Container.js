@@ -23,7 +23,7 @@ export default function Container(props) {
     const meta = {
         title: 'Abhik Ghosh – Developer, architect, writer.',
         description: `A data solution architect, Cloud enthusiast and course creator.`,
-        image: 'https://abhikghosh.in/static/images/banner.png',
+        image: 'https://www.abhikghosh.in/static/images/banner.png',
         type: 'website'
       };
 
