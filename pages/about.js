@@ -18,10 +18,10 @@ function Uni(){
 
 export default function About() {
   return (
-    <div className="lg:w-3/6 mx-auto mb-10 px-2 lg:px-0">
+    <div className="xl:w-3/6 lg:w-5/6 mx-auto mb-10 px-2 xl:px-0">
         <div className="mb-5">
-          <p className="font-bold text-3xl lg:text-4xl tracking-tight mb-4 text-black dark:text-white">Bio</p>
-          <p className="text-xl text-gray-600 dark:text-gray-400">This is my Bio page. This page summerizes my professional experiences and technology I work with. You can also download my resume on this page for details.</p>
+          <p className="font-bold text-3xl xl:text-4xl tracking-tight mb-4 text-black dark:text-white">Bio</p>
+          <p className=" text-gray-600 dark:text-gray-400">This is my Bio page. This page summerizes my professional experiences and technology I work with. You can also download my resume on this page for details.</p>
           <div className="border border-gray-300 dark:border-gray-700 rounded-lg py-10 px-2 md:px-10 mt-10">
                 <p className="mb-5">I am a Data Solution Architect with over 13 years of experience in software
                     engineering. I have

@@ -64,7 +64,7 @@ export default function Slug({ snippet }) {
   return (
     <div className="flex flex-col items-center space-y-8">
         {/* <BreadCrumb links={[{name: 'HOME', linkUrl: ''}, {name: 'ALL Projects', linkUrl: 'snippet'}, {name: `${slug}`, linkUrl: `snippet/${slug}`}]}/> */}
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 px-2 text-black dark:text-white">
         { title }
         </h1>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-2 mb-10">

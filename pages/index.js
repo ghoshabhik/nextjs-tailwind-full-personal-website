@@ -27,12 +27,12 @@ export default function Home({ snippets, posts }) {
     })
   }
   return (
-    <div className="lg:w-4/6 mx-auto mb-8 px-5">
+    <div className="xl:w-4/6 lg:w-5/6 mx-auto mb-8 px-5">
           <div className="mb-5">
-            <p className="lg:text-5xl text-4xl text-right font-semibold mb-3 tracking-tight lg:px-48">Hello, I am Abhik 👋</p>
-            <p className="lg:text-lg text-gray-600 dark:text-gray-400  lg:px-48">A Data Solution Architect, my day job revolves around cloud data migration, real-time data processing and data platform modernization. I love clean code and functional style programming. 
+            <p className="xl:text-5xl text-4xl text-right font-semibold mb-3 tracking-tight xl:px-48">Hello, I am Abhik 👋</p>
+            <p className="xl:text-lg text-gray-600 dark:text-gray-400  xl:px-48">A Data Solution Architect, my day job revolves around cloud data migration, real-time data processing and data platform modernization. I love clean code and functional style programming. 
             Enjoy long run, photography and mountains. </p>
-            <p className="text-md text-gray-600 dark:text-gray-400 mt-5 lg:px-48">
+            <p className="text-md text-gray-600 dark:text-gray-400 mt-5 xl:px-48">
             <Link href='/about' passHref>
                 <a className="highlighted-link">
                 Please read my bio here →
@@ -44,14 +44,14 @@ export default function Home({ snippets, posts }) {
                 <div className='has-tooltip'>
                   <span className='tooltip rounded shadow-lg p-1 bg-gray-100 dark:bg-gray-800 -mt-10 -ml-10 text-sm'>Click to checkout my LinkedIn Profile</span>
                   <Link href='https://medium.com/@ghoshabhik'>
-                    <a><FaLinkedin /> </a> 
+                    <a target="_blank" rel="noopener noreferrer"><FaLinkedin /> </a> 
                   </Link>
                 </div>
                 <div className='has-tooltip'>
                   <span className='tooltip rounded shadow-lg p-1 bg-gray-100 dark:bg-gray-800 -mt-10 -ml-10 text-sm'>Click to checkout my Github Profile</span>
                   <Link href='https://medium.com/@ghoshabhik'>
                     
-                    <a><FaGithub />  </a> 
+                    <a target="_blank" rel="noopener noreferrer"><FaGithub />  </a> 
                   </Link>
                 </div>
                 <div className='has-tooltip'>
@@ -61,8 +61,8 @@ export default function Home({ snippets, posts }) {
               </div>
             
             <div className="w-1/2 mx-auto  mb-28 border-b-4 dark:border-gray-600 border-gray-200"></div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 my-10 gap-5">
-              <div className="lg:p-3 rounded-md lg:border dark:border-gray-700">
+            <div className="grid grid-cols-1 xl:grid-cols-2 my-10 gap-5">
+              <div className="xl:p-3 rounded-md xl:border dark:border-gray-700">
                 <p className="text-3xl font-semibold my-3 text-center">📄 Latest from the Blog</p>
                 <div>
                 {posts.slice(0,3).map((post, index) => (
@@ -74,7 +74,7 @@ export default function Home({ snippets, posts }) {
                   <p className="text-right tracking-tight cursor-pointer">All Posts ➡️</p>  </a>
                 </Link>
               </div>
-              <div className="lg:p-3 rounded-md lg:border dark:border-gray-700">
+              <div className="xl:p-3 rounded-md xl:border dark:border-gray-700">
                 <p className="text-3xl font-semibold tracking-tight my-3 text-center ">💻 Featured Projects</p>
                 <div>
                 {snippets.slice(0,5).map((snippet, index) => (
