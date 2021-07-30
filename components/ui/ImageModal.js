@@ -15,10 +15,33 @@ const ImageModal = ({ setSelectedImg, selectedImg }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <motion.img src={selectedImg.url} alt="enlarged pic" className="block lg:max-w-6/10 lg:max-h-8/10 my-20 mx-auto"
+      <motion.img src={selectedImg.url} alt="enlarged pic" className="block max-w-8/10 lg:max-h-3/4 my-20 mx-auto"
         initial={{ y: "-100vh" }}
         animate={{ y: 0 }}
       />
+
+      {/* <div style={{
+          position: 'relative',
+          height: 0,
+          paddingTop: `${( 30 / 800 ) * 100}%`,
+          paddingLeft: `${( 30 / 800 ) * 100}%`,
+          backgroundImage: `url(${selectedImg.url500})`,
+          backgroundPosition: 'center center',
+          backgroundSize: `100%`
+        }}>
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0
+        }}>
+          <motion.img src={selectedImg.url} alt="enlarged pic" className="block max-w-8/10 lg:max-h-3/4 my-20 mx-auto"
+            initial={{ y: "-100vh" }}
+            animate={{ y: 0 }}
+          />
+        </div>
+        </div> */}
+
+
       {/* <motion.div 
       className="block lg:max-w-6/10 lg:max-h-8/10 my-20 mx-auto"
       initial={{ y: "-100vh" }}
