@@ -137,7 +137,7 @@ export default function About() {
                     className="rounded-full"
                     /></div>
                 <div><p className=" text-gray-600 dark:text-gray-400">
-                Hey, If you have come this far, definitely you'd like to say hello here on this <Link href={'/contact'} passHref><a className="highlighted-link">contact page →</a></Link> AND It was nice to meet you, have a great day!
+                Hey, If you have come this far, definitely you`&apos;d like to say hello here on this <Link href={'/contact'} passHref><a className="highlighted-link">contact page →</a></Link> AND It was nice to meet you, have a great day!
                 </p></div>
                 
                 
